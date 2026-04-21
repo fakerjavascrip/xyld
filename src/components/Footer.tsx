@@ -4,7 +4,6 @@ export default function Footer() {
       <div className="container footerInner">
         <div className="footerCard" role="contentinfo" aria-label="页脚信息">
           <div className="footerBrand">
-            <div className="footerTitle">西安鑫雅立道商贸有限公司</div>
             <div className="footerKicker">一站式农副产品供应链 · 仓储 · 分拣 · 冷链配送服务商</div>
           </div>
 
