@@ -64,7 +64,12 @@ export default function Header({ brand, nav }: { brand: string; nav: NavItem[] }
             </div>
             <div className="drawerNav">
               {items.map((it) => (
-                <Link key={it.to} className="drawerLink" to={it.to} onClick={() => setOpen(false)}>
+                <Link
+                  key={it.to}
+                  className={`drawerLink ${location.pathname === it.to ? "active" : ""}`}
+                  to={it.to}
+                  onClick={() => setOpen(false)}
+                >
                   {it.label}
                 </Link>
               ))}
