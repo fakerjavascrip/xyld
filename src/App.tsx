@@ -31,20 +31,28 @@ export default function App() {
             path="/"
             element={
               <div className="heroPage">
-                <img
-                  className="heroImg"
-                  src={`${base}img/1.png`}
-                  alt="西安鑫雅立道商贸有限公司 - 首屏主视觉"
-                />
+                <picture>
+                  <source srcSet={`${base}img/1.webp`} type="image/webp" />
+                  <img
+                    className="heroImg"
+                    src={`${base}img/1.png`}
+                    alt="西安鑫雅立道商贸有限公司 - 首屏主视觉"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             }
           />
-          <Route path="/about" element={<ImagePage src={`${base}img/2.png`} alt="公司简介" />} />
-          <Route path="/business" element={<ImagePage src={`${base}img/3.png`} alt="核心业务" />} />
-          <Route path="/categories" element={<ImagePage src={`${base}img/4.png`} alt="配送品类齐全" />} />
-          <Route path="/clients" element={<ImagePage src={`${base}img/5.png`} alt="服务客户" />} />
-          <Route path="/process" element={<ImagePage src={`${base}img/6.png`} alt="服务流程" />} />
-          <Route path="/contact" element={<ImagePage src={`${base}img/7.png`} alt="联系我们与公司资质" />} />
+          <Route path="/about" element={<ImagePage src={`${base}img/2.webp`} fallbackSrc={`${base}img/2.png`} alt="公司简介" />} />
+          <Route path="/business" element={<ImagePage src={`${base}img/3.webp`} fallbackSrc={`${base}img/3.png`} alt="核心业务" />} />
+          <Route
+            path="/categories"
+            element={<ImagePage src={`${base}img/4.webp`} fallbackSrc={`${base}img/4.png`} alt="配送品类齐全" />}
+          />
+          <Route path="/clients" element={<ImagePage src={`${base}img/5.webp`} fallbackSrc={`${base}img/5.png`} alt="服务客户" />} />
+          <Route path="/process" element={<ImagePage src={`${base}img/6.webp`} fallbackSrc={`${base}img/6.png`} alt="服务流程" />} />
+          <Route path="/contact" element={<ImagePage src={`${base}img/7.webp`} fallbackSrc={`${base}img/7.png`} alt="联系我们与公司资质" />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

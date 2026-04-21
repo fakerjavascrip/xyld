@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "sharp": "^0.34.5",
     "typescript": "^6.0.3",
     "vite": "^8.0.9"
   }
