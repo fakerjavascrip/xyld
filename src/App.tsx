@@ -3,11 +3,15 @@ import Header, { type NavItem } from "./components/Header";
 import Footer from "./components/Footer";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import ImagePage from "./pages/ImagePage";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Business from "./pages/Business";
+import Categories from "./pages/Categories";
+import Clients from "./pages/Clients";
+import Process from "./pages/Process";
+import Contact from "./pages/Contact";
 
 export default function App() {
-  const base = import.meta.env.BASE_URL;
   const nav = useMemo<NavItem[]>(
     () => [
       { to: "/", label: "首页" },
@@ -28,16 +32,13 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home baseUrl={base} />} />
-          <Route path="/about" element={<ImagePage src={`${base}img/2.webp`} fallbackSrc={`${base}img/2.png`} alt="公司简介" />} />
-          <Route path="/business" element={<ImagePage src={`${base}img/3.webp`} fallbackSrc={`${base}img/3.png`} alt="核心业务" />} />
-          <Route
-            path="/categories"
-            element={<ImagePage src={`${base}img/4.webp`} fallbackSrc={`${base}img/4.png`} alt="配送品类齐全" />}
-          />
-          <Route path="/clients" element={<ImagePage src={`${base}img/5.webp`} fallbackSrc={`${base}img/5.png`} alt="服务客户" />} />
-          <Route path="/process" element={<ImagePage src={`${base}img/6.webp`} fallbackSrc={`${base}img/6.png`} alt="服务流程" />} />
-          <Route path="/contact" element={<ImagePage src={`${base}img/7.webp`} fallbackSrc={`${base}img/7.png`} alt="联系我们与公司资质" />} />
+          <Route path="/" element={<Home baseUrl={import.meta.env.BASE_URL} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/process" element={<Process />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
