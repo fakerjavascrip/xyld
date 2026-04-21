@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import ImagePage from "./pages/ImagePage";
+import Home from "./pages/Home";
 
 export default function App() {
   const base = import.meta.env.BASE_URL;
@@ -27,23 +28,7 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="heroPage">
-                <picture>
-                  <source srcSet={`${base}img/1.webp`} type="image/webp" />
-                  <img
-                    className="heroImg"
-                    src={`${base}img/1.png`}
-                    alt="西安鑫雅立道商贸有限公司 - 首屏主视觉"
-                    loading="eager"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-            }
-          />
+          <Route path="/" element={<Home baseUrl={base} />} />
           <Route path="/about" element={<ImagePage src={`${base}img/2.webp`} fallbackSrc={`${base}img/2.png`} alt="公司简介" />} />
           <Route path="/business" element={<ImagePage src={`${base}img/3.webp`} fallbackSrc={`${base}img/3.png`} alt="核心业务" />} />
           <Route
