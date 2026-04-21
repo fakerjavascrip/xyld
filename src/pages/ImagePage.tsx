@@ -10,11 +10,14 @@ export default function ImagePage({
   return (
     <div className="page">
       <div className="container">
-        <div className="imageCard">
-          <picture>
-            <source srcSet={src} type="image/webp" />
-            <img src={fallbackSrc ?? src} alt={alt} loading="lazy" decoding="async" />
-          </picture>
+        <div className="stage" style={{ ["--stage-bg" as never]: `url(${fallbackSrc ?? src})` }}>
+          <div className="stageOverlay" />
+          <div className="stageFrame">
+            <picture>
+              <source srcSet={src} type="image/webp" />
+              <img src={fallbackSrc ?? src} alt={alt} loading="eager" decoding="async" />
+            </picture>
+          </div>
         </div>
       </div>
     </div>
