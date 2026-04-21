@@ -27,14 +27,16 @@ export default function Business() {
       <div className="container">
         <div className="domCard">
           <h1 className="domTitle">核心业务</h1>
-          <div className="domGrid">
-            {items.map((it) => (
-              <div key={it.no} className="domItem">
-                <div className="domNo">{it.no}</div>
-                <div className="domItemTitle">{it.title}</div>
-                <div className="domItemDesc">{it.desc}</div>
-              </div>
-            ))}
+          <div className="domBody">
+            <div className="domGrid">
+              {items.map((it) => (
+                <div key={it.no} className="domItem">
+                  <div className="domNo">{it.no}</div>
+                  <div className="domItemTitle">{it.title}</div>
+                  <div className="domItemDesc">{it.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

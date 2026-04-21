@@ -37,14 +37,16 @@ export default function Process() {
       <div className="container">
         <div className="domCard">
           <h1 className="domTitle">服务流程</h1>
-          <div className="domGrid three">
-            {steps.map((s) => (
-              <div key={s.no} className="domItem">
-                <div className="domNo">{s.no}</div>
-                <div className="domItemTitle">{s.title}</div>
-                <div className="domItemDesc">{s.desc}</div>
-              </div>
-            ))}
+          <div className="domBody">
+            <div className="domGrid three">
+              {steps.map((s) => (
+                <div key={s.no} className="domItem">
+                  <div className="domNo">{s.no}</div>
+                  <div className="domItemTitle">{s.title}</div>
+                  <div className="domItemDesc">{s.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

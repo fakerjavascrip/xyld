@@ -51,6 +51,16 @@ main{
   overflow: hidden;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.routeHost{
+  display: contents;
+}
+.page,
+.homeHero{
+  flex: 1;
+  min-height: 0;
 }
 
 .container{
@@ -281,8 +291,7 @@ main{
 
 .homeHero{
   position: relative;
-  height: calc(100svh - var(--headerH) - var(--footerH));
-  min-height: calc(100vh - var(--headerH) - var(--footerH));
+  height: 100%;
   background: var(--hero-bg);
   background-size: cover;
   background-position: center;
@@ -339,6 +348,8 @@ main{
   padding: 0;
 }
 .page > .container{
+  flex: 1;
+  min-height: 0;
   height: 100%;
   display: flex;
 }
@@ -350,10 +361,12 @@ main{
 
 .domPage{
   display: flex;
+  flex-direction: column;
 }
 .domCard{
   width: 100%;
   height: 100%;
+  min-height: 0;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: #0f172a;
@@ -362,7 +375,25 @@ main{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: visible;
+  overflow: hidden;
+}
+.domBody{
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 2px; /* avoid text touching scrollbar edge */
+}
+.domBody::-webkit-scrollbar{
+  width: 8px;
+}
+.domBody::-webkit-scrollbar-thumb{
+  background: #233046;
+  border-radius: 999px;
+}
+.domBody::-webkit-scrollbar-track{
+  background: transparent;
 }
 .domTitle{
   margin: 0;

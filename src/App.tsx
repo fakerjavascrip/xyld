@@ -31,16 +31,18 @@ export default function App() {
       <ScrollToTop />
 
       <main>
-        <Routes>
-          <Route path="/" element={<Home baseUrl={import.meta.env.BASE_URL} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/business" element={<Business />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <div className="routeHost">
+          <Routes>
+            <Route path="/" element={<Home baseUrl={import.meta.env.BASE_URL} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/business" element={<Business />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </main>
 
       <Footer />

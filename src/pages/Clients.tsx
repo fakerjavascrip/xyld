@@ -23,13 +23,15 @@ export default function Clients() {
       <div className="container">
         <div className="domCard">
           <h1 className="domTitle">服务客户</h1>
-          <div className="domGrid two">
-            {items.map((it) => (
-              <div key={it.title} className="domItem">
-                <div className="domItemTitle">{it.title}</div>
-                <div className="domItemDesc">{it.desc}</div>
-              </div>
-            ))}
+          <div className="domBody">
+            <div className="domGrid two">
+              {items.map((it) => (
+                <div key={it.title} className="domItem">
+                  <div className="domItemTitle">{it.title}</div>
+                  <div className="domItemDesc">{it.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
