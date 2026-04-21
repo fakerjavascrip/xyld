@@ -193,21 +193,23 @@ main{
   display: grid;
   gap: 0;
   padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  border-bottom: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 8px;
 }
 .drawerLink{
   padding: 14px 12px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  background: transparent;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.05);
   font-size: 16px;
   font-weight: 750;
   color: rgba(255,255,255,.92);
   -webkit-tap-highlight-color: transparent;
 }
 .drawerLink + .drawerLink{
-  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 8px;
 }
 .drawerLink.active{
   background: rgba(16,185,129,.12);
@@ -225,6 +227,13 @@ main{
 .drawerCtas{ margin-top: auto; }
 
 @media (max-width: 420px){
+  .drawerPanel{
+    width: 100vw;
+    border-left: none;
+  }
+}
+
+@media (max-width: 520px){
   .drawerPanel{
     width: 100vw;
     border-left: none;
